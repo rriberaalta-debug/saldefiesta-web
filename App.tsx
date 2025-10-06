@@ -544,11 +544,11 @@ const App: React.FC = () => {
         ///>
        //)}
        }
-       <></>
+       <>
       {isUploadModalOpen && <UploadModal onClose={() => setUploadModalOpen(false)} onUpload={handleUpload} />}
       {isLoginModalOpen && <LoginModal onClose={() => setLoginModalOpen(false)} onLogin={handleLogin} onSwitchToSignUp={() => { setLoginModalOpen(false); setSignUpModalOpen(true); }} />}
       {isSignUpModalOpen && <SignUpModal onClose={() => setSignUpModalOpen(false)} onSignUp={handleSignUp} onSwitchToLogin={() => { setSignUpModalOpen(false); setLoginModalOpen(true); }} />}
-      </>
+      
       {legalModalContent && (
         <LegalModal 
             title={legalModalContent}
@@ -556,7 +556,7 @@ const App: React.FC = () => {
             onClose={handleCloseLegalModal}
         />
       )}
-
+  </>
       {currentUser && (
         <button
           onClick={() => setUploadModalOpen(true)}
