@@ -15,12 +15,12 @@ import SignUpModal from './components/SignUpModal';
 import HeroSection from './components/HeroSection';
 import FeedFilters from './components/FeedFilters';
 import CallToActionUpload from './components/CallToActionUpload';
-import GamificationSidebar from './components/GamificationSidebar';
+//import GamificationSidebar from './components/GamificationSidebar';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
-import GeolocationModal from './components/GeolocationModal';
-import FiestaFinder from './components/FiestaFinder';
-import { generateDescription, searchPostsWithAI } from './services/geminiService';
+//import GeolocationModal from './components/GeolocationModal';
+//import FiestaFinder from './components/FiestaFinder';
+//import { generateDescription, searchPostsWithAI } from './services/geminiService';
 import { Plus } from 'lucide-react';
 import { useDebounce } from './hooks/useDebounce';
 
@@ -532,17 +532,17 @@ const App: React.FC = () => {
         />
       )}
       
-      {isFiestaFinderOpen && <FiestaFinder onClose={() => setFiestaFinderOpen(false)} />}
+      //{isFiestaFinderOpen && <FiestaFinder onClose={() => setFiestaFinderOpen(false)} />}
       
-      {geolocationStatus && (
-        <GeolocationModal 
-          status={geolocationStatus}
-          onClose={() => setGeolocationStatus(null)}
-          onAllow={handleAllowGeolocation}
-          onManualSearch={handleManualLocationSearch}
-          cities={Object.keys(cityCoordinates)}
-        />
-      )}
+      //{geolocationStatus && (
+        //<GeolocationModal 
+          //status={geolocationStatus}
+          //onClose={() => setGeolocationStatus(null)}
+          //onAllow={handleAllowGeolocation}
+          //onManualSearch={handleManualLocationSearch}
+          //cities={Object.keys(cityCoordinates)}
+        ///>
+      //)}
 
       {isUploadModalOpen && <UploadModal onClose={() => setUploadModalOpen(false)} onUpload={handleUpload} />}
       {isLoginModalOpen && <LoginModal onClose={() => setLoginModalOpen(false)} onLogin={handleLogin} onSwitchToSignUp={() => { setLoginModalOpen(false); setSignUpModalOpen(true); }} />}
