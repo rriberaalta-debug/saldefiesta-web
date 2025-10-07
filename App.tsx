@@ -554,10 +554,10 @@ const App: React.FC = () => {
             title={legalModalContent}
             content={legalTexts[legalModalContent]}
             onClose={handleCloseLegalModal}
-        />
+       />
       )
-      
       </>
+      
       {currentUser && (
         <button
           onClick={() => setUploadModalOpen(true)}
