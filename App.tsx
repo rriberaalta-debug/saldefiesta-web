@@ -532,43 +532,70 @@ const App: React.FC = () => {
         />
       )}
       
-      //{isFiestaFinderOpen && <FiestaFinder onClose={() => setFiestaFinderOpen(false)} />}
-      
-      //{geolocationStatus && (
-        //<GeolocationModal 
-          //status={geolocationStatus}
-          //onClose={() => setGeolocationStatus(null)}
-          //onAllow={handleAllowGeolocation}
-          //onManualSearch={handleManualLocationSearch}
-          //cities={Object.keys(cityCoordinates)}
-        ///>
-       //)}
-  
-  <div key="modal-wrapper">
-      {isUploadModalOpen && <UploadModal onClose={() => setUploadModalOpen(false)} onUpload={handleUpload} />}
-      {isLoginModalOpen && <LoginModal onClose={() => setLoginModalOpen(false)} onLogin={handleLogin} onSwitchToSignUp={() => { setLoginModalOpen(false); setSignUpModalOpen(true); }} />}
-      {isSignUpModalOpen && <SignUpModal onClose={() => setSignUpModalOpen(false)} onSignUp={handleSignUp} onSwitchToLogin={() => { setSignUpModalOpen(false); setLoginModalOpen(true); }} />}
-      
-      {legalModalContent && (
-        <LegalModal 
+            {/* {isFiestaFinderOpen && <FiestaFinder onClose={() => setFiestaFinderOpen(false)} />} */}
+
+      {/* {geolocationStatus && (
+        <GeolocationModal 
+          status={geolocationStatus}
+          onClose={() => setGeolocationStatus(null)}
+          onAllow={handleAllowGeolocation}
+          onManualSearch={handleManualLocationSearch}
+          cities={Object.keys(cityCoordinates)}
+        />
+      )} */}
+
+      <div key="modal-wrapper">
+        {isUploadModalOpen && (
+          <UploadModal 
+            onClose={() => setUploadModalOpen(false)} 
+            onUpload={handleUpload} 
+          />
+        )}
+
+        {isLoginModalOpen && (
+          <LoginModal 
+            onClose={() => setLoginModalOpen(false)} 
+            onLogin={handleLogin} 
+            onSwitchToSignUp={() => { 
+              setLoginModalOpen(false); 
+              setSignUpModalOpen(true); 
+            }} 
+          />
+        )}
+
+        {isSignUpModalOpen && (
+          <SignUpModal 
+            onClose={() => setSignUpModalOpen(false)} 
+            onSignUp={handleSignUp} 
+            onSwitchToLogin={() => { 
+              setSignUpModalOpen(false); 
+              setLoginModalOpen(true); 
+            }} 
+          />
+        )}
+
+        {legalModalContent && (
+          <LegalModal 
             title={legalModalContent}
             content={legalTexts[legalModalContent]}
             onClose={handleCloseLegalModal}
-       />
-      )}
+          />
+        )}
 
-      {currentUser && (
-        <button
-          onClick={() => setUploadModalOpen(true)}
-          className="fixed bottom-6 right-6 bg-festive-orange text-white rounded-full p-4 shadow-lg hover:bg-orange-600 transition-transform transform hover:scale-110 z-30"
-          aria-label="Subir nueva publicación"
-        >
-          <Plus size={28} />
-        </button>
-      )}
+        {currentUser && (
+          <button
+            onClick={() => setUploadModalOpen(true)}
+            className="fixed bottom-6 right-6 bg-festive-orange text-white rounded-full p-4 shadow-lg hover:bg-orange-600 transition-transform transform hover:scale-110 z-30"
+            aria-label="Subir nueva publicación"
+          >
+            <Plus size={28} />
+          </button>
+        )}
 
-      <Footer onLegalLinkClick={handleOpenLegalModal} />
-  </div>
-  )
-  }
-  export default App;
+        <Footer onLegalLinkClick={handleOpenLegalModal} />
+      </div>
+    </div>
+  );
+};
+
+export default App;
