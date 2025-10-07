@@ -543,7 +543,7 @@ const App: React.FC = () => {
           //cities={Object.keys(cityCoordinates)}
         ///>
        //)}
-  }
+  
   <>
       {isUploadModalOpen && <UploadModal onClose={() => setUploadModalOpen(false)} onUpload={handleUpload} />}
       {isLoginModalOpen && <LoginModal onClose={() => setLoginModalOpen(false)} onLogin={handleLogin} onSwitchToSignUp={() => { setLoginModalOpen(false); setSignUpModalOpen(true); }} />}
