@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { Post, User, FiestaEvent } from "../types";
 
 // FIX: Corrected API key access to follow Gemini API guidelines and resolve the TypeScript error.
-// The API key must be reitrieved from `process.env.API_KEY`. The error message was also updated.
+// The API key must be reitrieved from `process.env.VITE_API_KEY`. The error message was also updated.
 const apiKey = process.env.VITE_API_KEY;
 
 if (!apiKey) {
