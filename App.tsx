@@ -555,7 +555,7 @@ const App: React.FC = () => {
             content={legalTexts[legalModalContent]}
             onClose={handleCloseLegalModal}
         />
-      )</>
+      ) </>
 
       {currentUser && (
         <button
