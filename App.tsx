@@ -555,9 +555,8 @@ const App: React.FC = () => {
             content={legalTexts[legalModalContent]}
             onClose={handleCloseLegalModal}
        />
-      )
-      <div>
-      }
+      )}
+
       {currentUser && (
         <button
           onClick={() => setUploadModalOpen(true)}
@@ -567,10 +566,11 @@ const App: React.FC = () => {
           <Plus size={28} />
         </button>
       )}
-
+      
+      
       <Footer onLegalLinkClick={handleOpenLegalModal} />
-    </div>
-    )
-};
-
+      </>
+      </div>
+      )
+   }
 export default App;
