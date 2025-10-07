@@ -3,7 +3,7 @@ import { Post, User, FiestaEvent } from "../types";
 
 // FIX: Corrected API key access to follow Gemini API guidelines and resolve the TypeScript error.
 // The API key must be reitrieved from `process.env.VITE_API_KEY`. The error message was also updated.
-const apiKey = process.env.VITE_API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 if (!apiKey) {
   throw new Error("API_KEY no está definida. Asegúrate de configurarla en tus variables de entorno.");
