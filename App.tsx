@@ -557,7 +557,7 @@ const App: React.FC = () => {
        />
       )
       <div>
-
+      }
       {currentUser && (
         <button
           onClick={() => setUploadModalOpen(true)}
