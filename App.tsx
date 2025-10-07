@@ -556,6 +556,7 @@ const App: React.FC = () => {
             onClose={handleCloseLegalModal}
         />
       )
+      
       </>
       {currentUser && (
         <button
