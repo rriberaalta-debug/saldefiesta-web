@@ -570,7 +570,7 @@ const App: React.FC = () => {
 
       <Footer onLegalLinkClick={handleOpenLegalModal} />
     </>
-  
+    )
 };
 
 export default App;
