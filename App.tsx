@@ -556,8 +556,8 @@ const App: React.FC = () => {
             onClose={handleCloseLegalModal}
        />
       )
-      </>
-      
+      <div>
+
       {currentUser && (
         <button
           onClick={() => setUploadModalOpen(true)}
