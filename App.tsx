@@ -532,9 +532,9 @@ const App: React.FC = () => {
         />
       )}
       
-            {/* {isFiestaFinderOpen && <FiestaFinder onClose={() => setFiestaFinderOpen(false)} />} */}
+             {isFiestaFinderOpen && <FiestaFinder onClose={() => setFiestaFinderOpen(false)} />}
 
-      {/* {geolocationStatus && (
+      {geolocationStatus && (
         <GeolocationModal 
           status={geolocationStatus}
           onClose={() => setGeolocationStatus(null)}
@@ -542,7 +542,7 @@ const App: React.FC = () => {
           onManualSearch={handleManualLocationSearch}
           cities={Object.keys(cityCoordinates)}
         />
-      )} */}
+      )}
 
       <div key="modal-wrapper">
         {isUploadModalOpen && (
