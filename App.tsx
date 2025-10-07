@@ -544,7 +544,7 @@ const App: React.FC = () => {
         ///>
        //)}
   
-  <>
+  <div key="modal-wrapper">
       {isUploadModalOpen && <UploadModal onClose={() => setUploadModalOpen(false)} onUpload={handleUpload} />}
       {isLoginModalOpen && <LoginModal onClose={() => setLoginModalOpen(false)} onLogin={handleLogin} onSwitchToSignUp={() => { setLoginModalOpen(false); setSignUpModalOpen(true); }} />}
       {isSignUpModalOpen && <SignUpModal onClose={() => setSignUpModalOpen(false)} onSignUp={handleSignUp} onSwitchToLogin={() => { setSignUpModalOpen(false); setLoginModalOpen(true); }} />}
@@ -566,11 +566,10 @@ const App: React.FC = () => {
           <Plus size={28} />
         </button>
       )}
-      
-      
+
       <Footer onLegalLinkClick={handleOpenLegalModal} />
-      </>
-</div>
-)
+    </div>
+  );
 };
+
 export default App;
