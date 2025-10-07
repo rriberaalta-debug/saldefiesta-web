@@ -15,7 +15,7 @@ import SignUpModal from './components/SignUpModal';
 import HeroSection from './components/HeroSection';
 import FeedFilters from './components/FeedFilters';
 import CallToActionUpload from './components/CallToActionUpload';
-//import GamificationSidebar from './components/GamificationSidebar';
+import GamificationSidebar from './components/GamificationSidebar';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
 //import GeolocationModal from './components/GeolocationModal';
