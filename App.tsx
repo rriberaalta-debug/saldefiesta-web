@@ -569,7 +569,7 @@ const App: React.FC = () => {
       )}
 
       <Footer onLegalLinkClick={handleOpenLegalModal} />
-    </>
+    </div>
     )
 };
 
