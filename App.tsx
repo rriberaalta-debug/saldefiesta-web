@@ -18,9 +18,9 @@ import CallToActionUpload from './components/CallToActionUpload';
 import GamificationSidebar from './components/GamificationSidebar';
 import Footer from './components/Footer';
 import LegalModal from './components/LegalModal';
-//import GeolocationModal from './components/GeolocationModal';
-//import FiestaFinder from './components/FiestaFinder';
-//import { generateDescription, searchPostsWithAI } from './services/geminiService';
+import GeolocationModal from './components/GeolocationModal';
+import FiestaFinder from './components/FiestaFinder';
+import { generateDescription, searchPostsWithAI } from './services/geminiService';
 import { Plus } from 'lucide-react';
 import { useDebounce } from './hooks/useDebounce';
 
