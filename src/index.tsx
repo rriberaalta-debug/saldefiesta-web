@@ -1,16 +1,24 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./tailwind.css";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from '../App.tsx';
-
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(<App />);
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import { saveTestPost, readTestPosts } from "./services/firestoreTest";
+import { getAuth } from "firebase/auth";
+
+const auth = getAuth();
+auth.onAuthStateChanged(async (user) => {
+  if (user) {
+    console.log("👤 Usuario autenticado:", user.email);
+    await saveTestPost(user.uid, "¡Hola Firestore!");
+    await readTestPosts();
+  } else {
+    console.log("⚠️ No hay usuario autenticado");
+  }
+});
