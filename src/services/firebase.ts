@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDBMSu8A7v_vZSlywHsEZsTkMX2eJJmEpM",
   authDomain: "saldefiesta-appp.firebaseapp.com",
   projectId: "saldefiesta-appp",
-  storageBucket: "saldefiesta-appp.appspot.com",
+  storageBucket: "saldefiesta-storage",
   messagingSenderId: "698613369041",
   appId: "1:698613369041:web:86264aee6ab547b43e9df0"
 };
