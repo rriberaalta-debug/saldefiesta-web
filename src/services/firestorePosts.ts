@@ -3,9 +3,11 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { auth } from "./auth";
 import { app } from "./firebase";
 
-// Inicializa Firestore y Storage
+// 🔹 Inicializa Firestore
 const db = getFirestore(app);
-const storage = getStorage(app);
+
+// 🔹 Forzar uso del bucket correcto de Storage
+const storage = getStorage(app, "gs://saldefiesta-storage");
 
 /**
  * Guarda una publicación en Firestore con texto y/o archivo multimedia.
@@ -22,17 +24,24 @@ export async function savePost(text: string, file: File | null) {
       const isVideo = file.type.startsWith("video/");
       mediaType = isVideo ? "video" : "image";
 
-      const storagePath = isVideo ? `uploads/videos/${file.name}` : `uploads/images/${file.name}`;
+      const folder = isVideo ? "uploads/videos" : "uploads/images";
+      const storagePath = `${folder}/${Date.now()}-${file.name}`; // nombre único
       const storageRef = ref(storage, storagePath);
 
+      console.log("📤 Subiendo a:", storagePath);
+
+      // Subir archivo al bucket correcto
       await uploadBytes(storageRef, file);
+
+      // Obtener URL pública
       mediaUrl = await getDownloadURL(storageRef);
+      console.log("✅ Archivo subido:", mediaUrl);
     }
 
     // 🔹 Usuario actual
     const user = auth.currentUser;
 
-    // 🔹 Guardar en Firestore
+    // 🔹 Guardar datos en Firestore
     const docRef = await addDoc(collection(db, "posts"), {
       text,
       mediaUrl,
@@ -44,8 +53,9 @@ export async function savePost(text: string, file: File | null) {
 
     console.log("✅ Publicación guardada con ID:", docRef.id);
     return docRef.id;
-  } catch (error) {
-    console.error("❌ Error al guardar publicación:", error);
+  } catch (error: any) {
+    console.error("❌ Error al guardar publicación:", error?.message || error);
+    alert("❌ Error al subir publicación: " + (error?.message || "ver consola"));
     throw error;
   }
 }
